@@ -1,0 +1,20 @@
+matrix:
+  include:
+  - os: linux
+    language: android
+    script: flutter build apk --release
+    android:
+      components:
+      - build-tools-28.0.3
+      - android-27
+      - android-28
+install:
+- git clone https://github.com/flutter/flutter
+- export PATH="$PATH:`pwd`/flutter/bin"
+- flutter doctor
+- flutter packages get
+after_script: ls
+notifications:
+  email: false
+
+if: branch = master AND type = push AND fork = false
