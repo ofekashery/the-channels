@@ -16,7 +16,6 @@ install:
 after_script: ls
 before_install:
 - openssl aes-256-cbc -K $encrypted_6dfd27876320_key -iv $encrypted_6dfd27876320_iv -in google-services.json.enc -out android/app/google-services.json -d
-- mv google-services.json android/app
 
 notifications:
   email: false
