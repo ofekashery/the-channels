@@ -13,7 +13,6 @@ install:
 - export PATH="$PATH:`pwd`/flutter/bin"
 - flutter doctor
 - flutter packages get
-after_script: ls
 before_install:
 - openssl aes-256-cbc -K $encrypted_2a7efc7cf3dc_key -iv $encrypted_2a7efc7cf3dc_iv -in secrets.tar.enc -out ./secrets.tar -d
 - tar xvf secrets.tar
