@@ -30,7 +30,7 @@ class AllChannelsPage extends StatelessWidget {
           ],
         ),
 
-        SizedBox(height: 24),
+        SizedBox(height: 19),
 
         FutureBuilder<List<ChannelsGroup>>(
           future: Channels.fetchChannelsGroups(),

@@ -15,7 +15,7 @@ class SettingsPage extends StatefulWidget {
 
 class SettingsPageState extends State<SettingsPage> {
 
-  String applicationVersion = '4.0.1';
+  String applicationVersion = '4.0.2';
   SharedPreferences prefs;
   var scaffoldKey = GlobalKey<ScaffoldState>();
 

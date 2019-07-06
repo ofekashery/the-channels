@@ -117,59 +117,67 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           child: panel
         ),
-        minHeight: 0,
-        maxHeight: MediaQuery.of(context).size.height * 5 / 6,
+        boxShadow: [],
+        minHeight: 80,
+        maxHeight: MediaQuery.of(context).size.height * 9 / 11,
         controller: panelController,
+        collapsed: getBottomAppBar(),
         body: Scaffold(
           appBar: AppBar(
             title: Center(
               child: Text('הערוצים'),
             )
           ),
-          body: home,
-          floatingActionButton:  FloatingActionButton.extended(
-            onPressed: () => panelController.open(),
-            elevation: 4,
-            icon: Icon(MdiIcons.chevronUp),
-            label: Text('כל הערוצים')
-          ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar: BottomAppBar(
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(MdiIcons.settingsOutline),
-                  tooltip: 'הגדרות',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (c) {
-                          return SettingsPage();
-                        }
-                      )
-                    );
-                  }
-                ),
-                IconButton(
-                  icon: Icon(MdiIcons.bellOutline),
-                  tooltip: 'תזכורות',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (c) {
-                          return RemindersPage();
-                        }
-                      )
-                    );
-                  }
-                )
-              ],
-            ),
-          )
+          body: home
         ),
       ),
+    );
+  }
+
+  Widget getBottomAppBar(){
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      floatingActionButton:  FloatingActionButton.extended(
+        onPressed: () => panelController.open(),
+        elevation: 4,
+        icon: Icon(MdiIcons.chevronUp),
+        label: Text('כל הערוצים')
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(MdiIcons.settingsOutline),
+              tooltip: 'הגדרות',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (c) {
+                      return SettingsPage();
+                    }
+                  )
+                );
+              }
+            ),
+            IconButton(
+              icon: Icon(MdiIcons.bellOutline),
+              tooltip: 'תזכורות',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (c) {
+                      return RemindersPage();
+                    }
+                  )
+                );
+              }
+            )
+          ],
+        ),
+      )
     );
   }
 }
